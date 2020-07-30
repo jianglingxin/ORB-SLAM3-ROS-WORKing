@@ -59,9 +59,10 @@ int main(int argc, char **argv)
     ImageGrabber igb(&SLAM);
 
     ros::NodeHandle nodeHandler;
-    ros::Subscriber sub = nodeHandler.subscribe("/airsim/rgb_img", 1, &ImageGrabber::GrabImage,&igb);
+//    ros::Subscriber sub = nodeHandler.subscribe("/airsim/rgb_img", 1, &ImageGrabber::GrabImage,&igb);
 
-    ros::spin();
+  ros::Subscriber sub = nodeHandler.subscribe("/kitti/camera_color_left/image_raw", 1, &ImageGrabber::GrabImage,&igb);
+  ros::spin();
 
     // Stop all threads
     SLAM.Shutdown();

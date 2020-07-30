@@ -9,8 +9,8 @@ ENDIF()
 
 MESSAGE("Build type: " ${ROS_BUILD_TYPE})
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}  -Wall  -O3 -march=native ")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall  -O3 -march=native")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}  -Wall  -g -O3 -march=native ")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall  -g -O3 -march=native")
 
 # Check C++11 or C++0x support
 include(CheckCXXCompilerFlag)
@@ -56,6 +56,8 @@ ${Pangolin_LIBRARIES}
 ${PROJECT_SOURCE_DIR}/../../../Thirdparty/DBoW2/lib/libDBoW2.so
 ${PROJECT_SOURCE_DIR}/../../../Thirdparty/g2o/lib/libg2o.so
 ${PROJECT_SOURCE_DIR}/../../../lib/libORB_SLAM3.so
+        /usr/lib/x86_64-linux-gnu/libboost_system.so
+        /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 )
 
 # Node for monocular camera
@@ -67,3 +69,10 @@ target_link_libraries(Mono
 ${LIBS}
 )
 
+rosbuild_add_executable(Mono_inertial
+        src/ros_mono_inertial.cc
+        )
+
+target_link_libraries(Mono_inertial
+        ${LIBS}
+        )
