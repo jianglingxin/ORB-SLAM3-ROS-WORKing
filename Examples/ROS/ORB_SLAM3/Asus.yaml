@@ -22,6 +22,7 @@ Camera.fps: 20.0
 # Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
 Camera.RGB: 1
 
+Camera.bf: 64.0
 
 # Transformation from camera 0 to body-frame (imu)
 Tbc: !!opencv-matrix

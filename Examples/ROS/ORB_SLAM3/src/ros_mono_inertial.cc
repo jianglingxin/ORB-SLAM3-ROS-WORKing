@@ -142,7 +142,7 @@ int main(int argc, char **argv)
 
 
 //  ros::Subscriber sub_imu = n.subscribe("/kitti/oxts/imu", 2000, imu_callback, ros::TransportHints().tcpNoDelay());
-//  ros::Subscriber sub_img0 = n.subscribe("/kitti/camera_color_left/image_raw", 100, img0_callback);
+//  ros::Subscriber sub_img0 = n.subscribe("/kitti/camera_color_right/image_raw", 100, img0_callback);
 
 //  ros::Subscriber sub_imu = n.subscribe("/airsim/imu", 2000, imu_callback, ros::TransportHints().tcpNoDelay());
 //  ros::Subscriber sub_img0 = n.subscribe("/airsim/rgb_img", 100, img0_callback);

@@ -76,3 +76,11 @@ rosbuild_add_executable(Mono_inertial
 target_link_libraries(Mono_inertial
         ${LIBS}
         )
+
+rosbuild_add_executable(Stereo
+        src/ros_stereo.cc
+        )
+
+target_link_libraries(Stereo
+        ${LIBS}
+        )
